@@ -62,8 +62,11 @@ function onClose(selectedDates) {
 }
 
 function checkForRelevance(dateValue) {
-  console.log(dateValue);
-  dateInterval = dateValue - new Date();
+  const chekTime = dateValue.getTime();
+  const nowTime = new Date().getTime();
+  dateInterval = chekTime - nowTime;
+  console.log('chek ', chekTime, ' now ', nowTime, ' interval ', dateInterval);
+  // dateInterval = dateValue - new Date();
   if (dateInterval < 1) {
     // window.alert('Please choose a date in the future');
     Notify.warning('Please choose a date in the future', {
