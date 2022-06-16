@@ -44,7 +44,7 @@ function onClick() {
   disabledEl(refs.btnStart);
   disabledEl(refs.inputDate);
   idTimerInterval = setInterval(() => {
-    dateInterval = selectedDate - new Date();
+    const dateInterval = selectedDate - new Date();
     interfaceDrawing(convertMs(dateInterval));
     if (dateInterval < 1000) {
       idTimerInterval = clearInterval(idTimerInterval);
