@@ -62,16 +62,12 @@ function onClose(selectedDates) {
 }
 
 function checkForRelevance(dateValue) {
-  const chekTime = dateValue.getTime();
-  const nowTime = new Date().getTime();
-  dateInterval = chekTime - nowTime;
-  console.log('chek ', chekTime, ' now ', nowTime, ' interval ', dateInterval);
-  // dateInterval = dateValue - new Date();
+  const dateInterval = dateValue - new Date();
   if (dateInterval < 1) {
-    window.alert('Please choose a date in the future');
-    // Notify.warning('Please choose a date in the future', {
-    //   position: 'center-top',
-    // });
+    // window.alert('Please choose a date in the future');
+    Notify.warning('Please choose a date in the future', {
+      position: 'center-top',
+    });
     disabledEl(refs.btnStart);
     return false;
   }
