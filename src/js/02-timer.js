@@ -61,8 +61,8 @@ function onClose(selectedDates) {
   unlockEl(refs.btnStart);
 }
 
-function checkForRelevance(date) {
-  dateInterval = date - new Date();
+function checkForRelevance(dateValue) {
+  dateInterval = dateValue - new Date();
   if (dateInterval < 1) {
     // window.alert('Please choose a date in the future');
     Notify.warning('Please choose a date in the future', {
